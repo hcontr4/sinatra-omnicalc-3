@@ -1,0 +1,20 @@
+<dl>
+  <% @messages.each do | message | %>
+    <dt><%= message["role"] %></dt>
+    <dd><%= message["content"] %></dd>
+  <% end %>
+</dl>
+
+<form action="/add_message_to_chat" method="post">
+  <label for="new_message_field">You:</label>
+
+  <input id="new_message" type="text" name="user_message" placeholder="Enter a message....">
+
+  <button>Send</button>
+</form>
+
+<hr>
+
+<form action="/clear_chat" method="post">
+  <button>Clear chat history</button>
+</form>
